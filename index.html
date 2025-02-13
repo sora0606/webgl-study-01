@@ -1,29 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGL 勉強会 2025 第1回</title>
     <style>
-        *{
+        html,
+        body {
             margin: 0;
-            padding: 0;
+            font-family: sans-serif;
+            font-feature-settings: 'palt';
         }
-        body{
-            overscroll-behavior: none;
+
+        section {
+            padding: 40px;
+            letter-spacing: 0.05em;
         }
-        #container{
-            width: 100vw;
-            height: 100vh;
+
+        h1 {
+            margin: 0 0 30px 0;
+            font-size: 40px;
+            line-height: 1;
+            color: #3e3e3e;
         }
-        canvas{
+
+        h1 span {
             display: block;
+            font-size: 60%;
+            margin-bottom: 10px;
+        }
+
+        ol {
+            list-style: none;
+            list-style-position: outside;
+            padding-left: 0;
+            counter-reset: step;
+        }
+
+        li {
+            font-size: 20px;
+            margin-top: 20px;
+            counter-increment: step;
+        }
+
+        li span {
+            font-size: 60%;
+            display: block;
+        }
+
+        li a {
+            color: #3e3e3e;
+            position: relative;
+            text-decoration: none;
+            border: currentColor 2px solid;
+            border-radius: 10px;
+            display: inline-flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 60px;
+            max-width: 630px;
+            width: 100%;
+            padding: 16px 32px 16px 150px;
+            line-height: 1.6;
+            transition: color 0.2s linear, background-color 0.2s linear;
+        }
+
+        a:hover {
+            color: #fff;
+            background-color: #3e3e3e;
+            transition-duration: 0.1s;
+        }
+
+        a::before {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 32px;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            content: 'Chapter' counter(step);
+            letter-spacing: 0.1em;
+            margin-right: 32px;
+            flex-shrink: 0;
+            font-weight: 600;
+            font-size: 16px;
         }
     </style>
 </head>
+
 <body>
-    <div id="container"></div>
-    <script type="module" src="./js/app.js"></script>
+    <section>
+        <h1><span>WebGL 勉強会 2025 第1回</span></h1>
+        <ol>
+            <li>
+                <a href="./01">3Dシーンの描画と原理 <span>３Dシーンの主要オブジェクトと概念</span></a>
+            </li>
+            <li>
+                <a href="./02">インタラクティブに３Dシーンに干渉する
+                    <span>OrbitControlsについて</span></a>
+            </li>
+            <li>
+                <a href="./03">ヘルパーを用いてもっとわかりやすく <span>three.jsの補助機能</span></a>
+            </li>
+            <li>
+                <a href="./04">様々なジオメトリ</a>
+            </li>
+            <li>
+                <a href="./05">カメラのパラメータについて <span>カメラについて深ぼってみよう</span></a>
+            </li>
+            <li>
+                <a href="./06">3Dシーンのリサイズ処理 <span>リサイズ大事</span></a>
+            </li>
+            <li>
+                <a href="./07">大量のメッシュを配置してみよう！ <span>遊び倒せ。</span></a>
+            </li>
+        </ol>
+    </section>
 </body>
+
 </html>
